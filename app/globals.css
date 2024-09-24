@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 100% 98%; /* Light background */
+    --foreground: 210 20% 15%; /* Dark foreground */
+  
+    --card: 255 255 255; /* White card */
+    --card-foreground: 50 50 50; /* Dark text for cards */
+  
+    --primary: 210 80% 20%; /* Strong blue */
+    --primary-foreground: 255 255 255; /* White text for primary elements */
+  
+    --secondary: 30 80% 30%; /* Green for secondary */
+    --secondary-foreground: 255 255 255; /* White text */
+  
+    --accent: 50 100% 50%; /* Bright yellow for accent */
+    --accent-foreground: 50 50 50; /* Dark text for accents */
+  
+    --border: 200 20% 80%; /* Light border */
+    --input: 200 20% 90%; /* Light input background */
+    --ring: 210 60% 30%; /* Ring color */
+  
+    --radius: 0.5rem; /* Rounded corners */
+  }
+
+  .dark {
+    --background: 210 20% 10%; /* Dark mode background */
+    --foreground: 240 100% 95%; /* Light text */
+  
+    --card: 30 20% 15%; /* Dark card */
+    --card-foreground: 255 255 255; /* Light text for cards */
+  
+    --primary: 50 100% 90%; /* Light primary */
+    --primary-foreground: 30 20% 10%; /* Dark text for primary */
+  
+    --secondary: 30 80% 40%; /* Medium green for secondary */
+    --secondary-foreground: 255 255 255; /* Light text */
+  
+    --accent: 50 80% 40%; /* Medium yellow for accent */
+    --accent-foreground: 255 255 255; /* Light text */
+  
+    --border: 30 30% 30%; /* Dark border */
+    --input: 30 30% 20%; /* Dark input background */
+    --ring: 240 100% 70%; /* Bright ring color */
+  }
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-inter), sans-serif;
+  color: var(--foreground); /* Consistent text color */
+}
+
+@layer base {
+  * {
+    @apply border-border; /* Apply border color */
+  }
+  body {
+    @apply bg-background text-foreground; /* Background and text color */
+    @apply antialiased; /* Smoother text rendering */
+  }
+  .card {
+    @apply rounded-lg shadow-lg transition-transform duration-300 ease-in-out; /* Card styling */
+  }
+  .card:hover {
+    @apply transform scale-105; /* Card hover effect */
+  }
+}
